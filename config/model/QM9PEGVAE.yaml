@@ -1,0 +1,27 @@
+model_name: "PEGVAE"
+pretrained_model_config:
+  model_name: "PEGVAE"
+  path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_qm9/d0zi5cu3/checkpoints/epoch-checkpoint-last-epoch=3999.ckpt
+pl_config:
+  requires_dense: True
+  batch_size: 256
+  lr: 1e-4
+  kl_config:
+    start_kl_loss_phasing: 12000
+    kl_weight: 0.5 #1.0e-04
+    max_kl_weight: 0.5
+    kl_weight_step: 1.0e-04
+  model_config:
+    riemannian: False
+    encoder_config:
+      node_features: 4
+      edge_features: 4
+      latent_dim: 1
+      filter_channels: 20
+    decoder_config:
+      node_features: 4
+      edge_features: 4
+      latent_dim: 1
+      filter_channels: 20
+      node_threshold: 0.36
+      edge_threshold: 0.13

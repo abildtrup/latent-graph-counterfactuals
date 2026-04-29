@@ -1,0 +1,9 @@
+torch >= 2.2.1
+torch_geometric >= 2.3
+lightning >= 2.2.1
+matplotlib
+plotly
+pyemd
+rdkit
+stochman
+ogb

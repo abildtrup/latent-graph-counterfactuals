@@ -1,0 +1,22 @@
+trainer:
+  accelerator: 'auto'
+  min_epochs: 10
+  max_epochs: 10
+  log_every_n_steps: 1
+  gradient_clip_val:
+checkpoint_best:
+  save_top_k: 1
+  monitor: val_loss
+  save_on_train_epoch_end: true
+  filename: epoch-checkpoint-best-{epoch:02d}
+checkpoint_best_reconstruction:
+  save_top_k: 1
+  monitor: reconstruction_val
+  save_on_train_epoch_end: true
+  filename: epoch-checkpoint-best-reconstruction-{epoch:02d}
+checkpoint_last:
+  save_top_k: 1
+  monitor: epoch
+  save_on_train_epoch_end: true
+  mode: max
+  filename: epoch-checkpoint-last-{epoch:02d}

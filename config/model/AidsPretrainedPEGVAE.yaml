@@ -1,0 +1,36 @@
+model_name: "PretrainedPEGVAE"
+resume_training_from_ckpt:
+  path:
+pl_config:
+  requires_dense: True
+  batch_size: 64
+  lr: 1e-3
+  kl_config:
+    start_kl_loss_phasing: 12000
+    kl_weight: 1.0e-04
+    max_kl_weight: 0.5
+    kl_weight_step: 1.0e-04
+  pretrained_model_config:
+    model_name: "PEGVAE"
+    path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_qm9/okesihr6/checkpoints/epoch-checkpoint-best-epoch=5657.ckpt
+  model_config:
+    encoder_adapter:
+      bool_features_in: 1
+      node_features_in: 9
+      adj_features_in: 1
+      edge_features_in: 3
+      bool_features_out: 1
+      node_features_out: 4
+      adj_features_out: 1
+      edge_features_out: 4
+      latent_filter_channels: 25
+    decoder_adapter:
+      bool_features_in: 20
+      node_features_in: 20
+      adj_features_in: 20
+      edge_features_in: 20
+      bool_features_out: 1
+      node_features_out: 9
+      adj_features_out: 1
+      edge_features_out: 3
+      latent_filter_channels: 25

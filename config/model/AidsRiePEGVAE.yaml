@@ -1,0 +1,25 @@
+model_name: "PEGVAE"
+pl_config:
+  requires_dense: True
+  batch_size: 16
+  lr: 1e-4
+  kl_config:
+    start_kl_loss_phasing: 12000
+    kl_weight: 1.0e-04
+    max_kl_weight: 0.5
+    kl_weight_step: 1.0e-04
+  model_config:
+    riemannian: True
+    encoder_config:
+      node_features: 9
+      edge_features: 3
+      latent_dim: 1
+      filter_channels: 20
+    decoder_config:
+      node_features: 9
+      edge_features: 3
+      latent_dim: 1
+      filter_channels: 20
+      graph_size_limit: 9
+      node_threshold: 0.36
+      edge_threshold: 0.13

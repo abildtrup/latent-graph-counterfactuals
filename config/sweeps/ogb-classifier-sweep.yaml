@@ -1,0 +1,26 @@
+program: counterfactual_graph_generation/train_model.py
+name: OgbClassifierSweep_v3
+method: grid
+metric:
+  goal: minimize
+  name: val_accuracy
+parameters:
+  trainer.trainer.min_epochs:
+    value: 800
+  trainer.trainer.max_epochs:
+    value: 800
+  dataset:
+    value: ogbg-molhiv
+  model:
+    value: OgbgClassifierBinary
+  model.pl_config.batch_size:
+    values: [512, 768, 1024]
+  model.pl_config.lr:
+    values: [1e-3, 1e-4]
+  model.pl_config.model_config.ff_channels:
+    value: 200
+
+command:
+  - python
+  - ${program}
+  - ${args_no_hyphens}

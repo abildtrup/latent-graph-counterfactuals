@@ -1,0 +1,24 @@
+program: counterfactual_graph_generation/train_model.py
+name: MutagenicityPEGVAESweep
+method: random
+run_cap: 8
+metric:
+  goal: minimize
+  name: reconstruction_val
+parameters:
+  dataset:
+    value: mutagenicity
+  model:
+    value: MutagenicityPEGVAE
+  model.pl_config.batch_size:
+    value: 64
+  model.pl_config.lr:
+    values: [1e-3, 1e-4]
+  model.pl_config.kl_config.max_kl_weight:
+    values: [1.0e-04, 0.1, 0.3, 0.5]
+
+
+command:
+  - python
+  - ${program}
+  - ${args_no_hyphens}

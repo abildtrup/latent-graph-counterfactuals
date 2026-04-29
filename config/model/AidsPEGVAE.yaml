@@ -1,0 +1,26 @@
+model_name: "PEGVAE"
+resume_training_from_ckpt:
+  path:
+pl_config:
+  requires_dense: True
+  batch_size: 64
+  lr: 1e-3
+  kl_config:
+    start_kl_loss_phasing: 24000
+    kl_weight: 1.0e-04
+    max_kl_weight: 0.5
+    kl_weight_step: 1.0e-04
+  model_config:
+    riemannian: False
+    encoder_config:
+      node_features: 9
+      edge_features: 3
+      latent_dim: 1
+      filter_channels: 20
+    decoder_config:
+      node_features: 9
+      edge_features: 3
+      latent_dim: 1
+      filter_channels: 20
+      node_threshold: 0.36
+      edge_threshold: 0.13

@@ -1,0 +1,23 @@
+program: counterfactual_graph_generation/methods/generate_counterfactuals.py
+name: AidsCFSweep
+method: grid
+metric:
+  goal: minimize
+  name: loss
+parameters:
+  dataset:
+    value: aids
+  model:
+    value: AidsPEGVAE
+  predicter.main_method_configuration.lr:
+      values: [0.02, 0.06, 0.1]
+  predicter.main_method_configuration.max_iterations:
+      values: [800, 1200, 1600]
+  predicter.main_method_configuration.lamb:
+      value: [0.5, 1.0, 2.0]
+
+
+command:
+  - python
+  - ${program}
+  - ${args_no_hyphens}

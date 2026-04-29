@@ -1,0 +1,23 @@
+dataloader: 'test'
+sample_size: 2
+model_name: PEGVAE
+main_method_configuration:
+  sample_counterfactual: False
+  tau: 1.0
+  lr: 0.05
+  max_iterations: 1000
+  lamb: 1.0
+nn_configuration:
+  k: 10
+aids:
+  #vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_aids/tqkzgymv/checkpoints/epoch-checkpoint-best-reconstruction-epoch=1040.ckpt
+  vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_aids/tqkzgymv/checkpoints/epoch-checkpoint-best-epoch=1507.ckpt
+  classifier_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/GraphClassifier_aids/qjeycagx/checkpoints/epoch-checkpoint-best-epoch=13.ckpt #"./models/aids_classifier_best.ckpt"
+mutagenicity:
+  #vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_mutagenicity/iuy4t21q/checkpoints/epoch-checkpoint-best-epoch=3197.ckpt
+  vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_mutagenicity/iuy4t21q/checkpoints/epoch-checkpoint-best-reconstruction-epoch=3074.ckpt
+  classifier_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/GraphClassifier_mutagenicity/90bjeusu/checkpoints/epoch-checkpoint-best-epoch=25.ckpt
+nci1:
+  #vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_nci1/jymfufyr/checkpoints/epoch-checkpoint-best-epoch=1773.ckpt
+  vae_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/PEGVAE_nci1/jymfufyr/checkpoints/epoch-checkpoint-best-reconstruction-epoch=1773.ckpt
+  classifier_checkpoint_path: /home/andab/work/counterfactual_graph_generation/logging/GraphClassifier_nci1/3i65z5un/checkpoints/epoch-checkpoint-best-epoch=28.ckpt

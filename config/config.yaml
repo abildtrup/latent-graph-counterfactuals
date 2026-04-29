@@ -1,0 +1,9 @@
+defaults:
+  - dataset: aids
+  - model: AidsPEGVAE
+  - trainer: trainer_config
+  - predicter: predicter_config
+  - evaluation: evaluation_config
+hydra:
+  run:
+    dir: logging/hydra-outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

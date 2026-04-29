@@ -1,0 +1,24 @@
+program: counterfactual_graph_generation/train_model.py
+name: AidsClassifierSweep
+method: random
+metric:
+  goal: minimize
+  name: val_accuracy
+parameters:
+  dataset:
+    value: aids
+  model:
+    value: AidsClassifierDense
+  model.pl_config.batch_size:
+    values: [32, 64, 128]
+  model.pl_config.lr:
+    values: [1e-3, 1e-4]
+  model.pl_config.model_config.num_layers:
+    values: [2, 3, 4]
+  model.pl_config.model_config.ff_channels:
+    values: [20, 100, 200, 300]
+
+command:
+  - python
+  - ${program}
+  - ${args_no_hyphens}

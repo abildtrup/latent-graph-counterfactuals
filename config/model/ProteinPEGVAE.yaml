@@ -1,0 +1,19 @@
+model_name: "PEGVAE"
+pl_config:
+  requires_dense: True
+  batch_size: 16
+  lr: 1e-4
+  model_config:
+    riemannian: False
+    encoder_config:
+      node_features: 3
+      edge_features: 1
+      latent_dim: 1
+      filter_channels: 20
+    decoder_config:
+      node_features: 3
+      edge_features: 1
+      latent_dim: 1
+      filter_channels: 20
+      node_threshold:
+      edge_threshold:

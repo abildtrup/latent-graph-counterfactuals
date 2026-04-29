@@ -1,0 +1,12 @@
+model_name: GraphClassifier
+pl_config:
+  requires_dense: False
+  riemannian: False
+  batch_size: 16
+  lr: 1e-4
+  model_config:
+    num_features: 10
+    num_classes: 2
+    num_layers: 3
+    dim: 20
+    dropout: 0.0

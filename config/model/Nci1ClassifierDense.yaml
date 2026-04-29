@@ -1,0 +1,14 @@
+model_name: GraphClassifier
+resume_training_from_ckpt:
+  path:
+pl_config:
+  requires_dense: True
+  type: DENSE
+  batch_size: 64
+  lr: 1e-4
+  model_config:
+    node_features: 10
+    edge_features: 1
+    num_classes: 2
+    num_layers: 3
+    filter_channels: 30

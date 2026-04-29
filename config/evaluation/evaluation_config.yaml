@@ -1,0 +1,6 @@
+plot: True
+evaluation_paths:
+#  - data/predictions/test_nci1.pt
+ - data/predictions/val_mutagenicity.pt
+#  - data/predictions/test_mutagenicity.pt
+#  - data/predictions/test_nci1.pt

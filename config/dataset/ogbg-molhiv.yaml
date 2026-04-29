@@ -1,0 +1,8 @@
+dataset_name: "ogbg-molhiv"
+download_data: True
+seed: 1
+batch_size: 256
+num_cpu_workers: 4
+graph_size_limit: 30
+dense_data_representation: True
+use_split_idx: False
